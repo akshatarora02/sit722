@@ -33,6 +33,7 @@ resource "null_resource" "docker_login" {
 }
 resource "null_resource" "docker_push" {
 
+    depends_on = [ null_resource.docker_login ]
     triggers = {
         always_run = timestamp()
     }
