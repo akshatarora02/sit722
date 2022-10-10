@@ -6,10 +6,10 @@ provider "google" {
 }
 data "google_client_config" "provider" {}
 
-data "google_container_cluster" "cluster" {
-  name     = var.app_name
-  location = var.location
-}
+#data "google_container_cluster" "cluster" {
+#  name     = var.app_name
+#  location = var.location
+#}
 
 provider "kubernetes" {
   #host  = "https://${data.google_container_cluster.cluster.endpoint}"
