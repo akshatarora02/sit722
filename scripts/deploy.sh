@@ -8,5 +8,5 @@ set -u # or set -o nounset
 cd ./scripts
 export KUBERNETES_SERVICE_HOST="" # Workaround for https://github.com/terraform-providers/terraform-provider-kubernetes/issues/679
 terraform init 
-terraform apply -auto-approve \
+terraform apply -auto-approve -lock=false \
     -var "app_version=$VERSION" 
