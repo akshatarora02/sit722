@@ -125,4 +125,4 @@ gcloud auth print-access-token | docker login -u oauth2accesstoken --password-st
 gcloud auth print-access-token --impersonate-service-account {service-account-with-requrired-permissions-created-through-terraform} | docker login -u oauth2accesstoken --password-stdin https://australia-southeast1-docker.pkg.dev
 
 
-Thank you for reading through this, hopefully you are able to deploy the web app using these steps and watching the walkthrough video. :)
+Thank you for reading through this, hopefully you are able to deploy the web app after using these steps and watching the walkthrough video. :)
