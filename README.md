@@ -115,14 +115,14 @@ gcloud init (open the link that is produced by this command and paste the code t
 
 1. Visit the service account page and download the admin service account key (json file)
 2. Copy the contents and create a file on the jenkins server using those contents,
-3. Run gcloud auth activate-service-account <service-acoount-email) –-key-file=<file-created-on-server>
+3. Run gcloud auth activate-service-account <service-acoount-email) –-key-file= {file-created-on-server.json}
 4. gcloud auth configure-docker (Configures docker for that service account on that server after authentication is complete, can pull/push images to gcr now)
 
 Again, this is just a workaround and ideally a service account with appropriate IAM roles should be created, which can be impersonated in the docker login command in video-streaming.tf file as follows:
 
 gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://australia-southeast1-docker.pkg.dev **can be changed to:**
 
-gcloud auth print-access-token --impersonate-service-account <service account with requrired permissions created through terraform> | docker login -u oauth2accesstoken --password-stdin https://australia-southeast1-docker.pkg.dev
+gcloud auth print-access-token --impersonate-service-account <service-account-with-requrired-permissions-created-through-terraform> | docker login -u oauth2accesstoken --password-stdin https://australia-southeast1-docker.pkg.dev
 
 
 Thank you for reading through this, hopefully you are able to deploy the web app using these steps and watching the walkthrough video. :)
