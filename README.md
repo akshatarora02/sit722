@@ -34,9 +34,9 @@ The deployment was done in an automated manner through a Jenkins server using Je
 
 #### All the above steps are covered in detail in the walkthrough video.
 
-### 1: Since I am not allowed to create an IAM user and add it to service account in the GCP account that I have access to, we had to install gcloud on the jenkins server and authenticate it to give the instance access to deploy onto GCP. Ideally, this should be handled through an IAM user and not like this. 
+#### (1): Since I am not allowed to create an IAM user and add it to service account in the GCP account that I have access to, we had to install gcloud on the jenkins server and authenticate it to give the instance access to deploy onto GCP. Ideally, this should be handled through an IAM user and not like this. 
 
-### 2: Steps followed to install terraform
+#### (2): Steps followed to install terraform
 
 **Reference document followed:** https://learn.hashicorp.com/tutorials/terraform/install-cli
 
@@ -48,7 +48,7 @@ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashi
 
 sudo yum -y install terraform
 
-### 3: Steps followed to install docker
+#### (3): Steps followed to install docker
 
 **Reference document followed:** https://docs.docker.com/engine/install/centos/
 
@@ -93,7 +93,7 @@ sudo usermod -s /bin/bash jenkins  (to enable bash for jenkins user)
 
 sudo reboot
 
-### 4: Steps followed to install docker
+#### (4): Steps followed to install docker
 
 **Commands used:**
 
@@ -111,7 +111,7 @@ EOM
 
 gcloud init (open the link that is produced by this command and paste the code that is provided)
 
-#### Note: Since in GCP, we don't can't explicitly create a container registry, we don't have docker login details for the registry like we do in Azure cloud platform. The container registry is created directly when we try to push the docker image using the following tag structure: gcr.io/<registry-name>:<version>. To give access to jenkins server to perform this, we have to follow the steps (shown in walkthrough video as well):
+##### Note: Since in GCP, we don't can't explicitly create a container registry, we don't have docker login details for the registry like we do in Azure cloud platform. The container registry is created directly when we try to push the docker image using the following tag structure: gcr.io/<registry-name>:<version>. To give access to jenkins server to perform this, we have to follow the steps (shown in walkthrough video as well):
 
 1. Visit the service account page and download the admin service account key (json file)
 2. Copy the contents and create a file on the jenkins server using those contents,
