@@ -34,7 +34,7 @@ The deployment was done in an automated manner through a Jenkins server using Je
 
 #### All the above steps are covered in detail in the walkthrough video.
 
-#### (1): Since I am not allowed to create an IAM user and add it to service account in the GCP account that I have access to, we had to install gcloud on the jenkins server and authenticate it to give the instance access to deploy onto GCP. Ideally, this should be handled through an IAM user and not like this. 
+#### (1): Since I am not allowed to create an IAM user and add it to service account in the GCP account that I have access to, I had to install gcloud on the jenkins server and authenticate it to give the instance access to deploy onto GCP. Ideally, this should be handled through an IAM user and not like this. 
 
 #### (2): Steps followed to install terraform
 
